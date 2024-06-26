@@ -1,0 +1,206 @@
+@import 'variables/variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: $primary-font-family;
+  color: $primary-brown;
+  background-color: $background-eggshell;
+}
+
+h1 {
+  margin: 0;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 6rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 4.77rem;
+  font-weight: 600;
+}
+
+h3 {
+  margin: 0;
+  font-size: 2.441rem;
+  font-weight: 600;
+}
+
+h4 {
+  margin: 0;
+  font-family: $secondary-font-family;
+  font-size: 1.953rem;
+  font-weight: 600;
+}
+
+h5 {
+  margin: 0;
+  font-family: $secondary-font-family;
+  font-size: 1.563rem;
+  font-weight: 500;
+}
+
+h6 {
+  margin: 0;
+  font-family: $secondary-font-family;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  font-family: $secondary-font-family;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+a {
+    margin: 0;
+    font-family: $secondary-font-family;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.App {
+  width: 100%;
+}
+.navbar {
+  position: fixed;
+  left: 128px;
+  right: 128px;
+  display: flex;
+  flex-direction: row;
+  background-color: #FFF9F1;
+  border: 3px solid $primary-brown;
+  border-radius: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+  padding: 8px 16px;
+  box-shadow: 3px 3px 0px $primary-brown;
+}
+
+.nav-group {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-header {
+  text-align: center;
+}
+
+
+.projects-section {
+  background-color: #D2D8C9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  padding: 64px 0px;
+}
+
+.projects-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  width: 985px;
+  height: 216px;
+  padding: 32px;
+  background-color: $background-eggshell;
+  border-radius: 25px;
+  border: 3px solid $primary-brown;
+  box-shadow: 3px 3px 0px $primary-brown;
+  transition: 0.3s;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure it takes full height of .project */
+}
+
+.product-image {
+  width: auto;
+  height: 180px;
+  border-radius: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.tech-used-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.tech-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 50px;
+  border: 2px solid;
+  padding: 6px 12px;
+}
+
+.tech-button-text {
+  transform: translateY(-1px);
+}
+
+.arrow-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.arrow {
+  transition: 0.3s;
+}
+.project:hover {
+  box-shadow: 6px 6px 0px;
+  transform: scale(1.05);
+  cursor: pointer;
+
+  .product-image {
+    visibility: visible;
+    opacity: 1;
+    height: 216px;
+    transform:rotate(-8deg)
+  }
+
+  .arrow {
+    transform: rotate(-45deg);
+  }
+
+}
