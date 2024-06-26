@@ -1,5 +1,20 @@
 @import 'variables/variables.scss';
 
+@mixin header-and-content() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  padding: 64px 0px;
+}
+
+@mixin border($radius: 25px) {
+  border: 3px solid $primary-brown;
+  border-radius: $radius;
+  box-shadow: 3px 3px 0px $primary-brown;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -40,7 +55,7 @@ h5 {
   margin: 0;
   font-family: $secondary-font-family;
   font-size: 1.563rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h6 {
@@ -58,6 +73,12 @@ p {
   font-weight: 400;
 }
 
+.p-small {
+  margin: 0;
+  font-family: $secondary-font-family;
+  font-size: 1rem;
+  font-weight: 400;
+}
 a {
     margin: 0;
     font-family: $secondary-font-family;
@@ -75,13 +96,12 @@ a {
   display: flex;
   flex-direction: row;
   background-color: #FFF9F1;
-  border: 3px solid $primary-brown;
-  border-radius: 50px;
   justify-content: space-between;
   align-items: center;
   margin: 16px 0;
   padding: 8px 16px;
-  box-shadow: 3px 3px 0px $primary-brown;
+  z-index: 10;
+  @include border($radius: 50px);
 }
 
 .nav-group {
@@ -107,32 +127,25 @@ a {
 
 .projects-section {
   background-color: #D2D8C9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 64px;
-  padding: 64px 0px;
+  @include header-and-content();
 }
 
 .projects-flex {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  width: 985px;
 }
 
 .project {
   display: flex;
   justify-content: space-between;
-  width: 985px;
+  width: 100%;
   height: 216px;
   padding: 32px;
   background-color: $background-eggshell;
-  border-radius: 25px;
-  border: 3px solid $primary-brown;
-  box-shadow: 3px 3px 0px $primary-brown;
+  @include border();
   transition: 0.3s;
 }
 
@@ -203,4 +216,76 @@ a {
     transform: rotate(-45deg);
   }
 
+}
+
+.experience-section {
+  @include header-and-content();
+
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "exp-1 exp-1"
+                       "exp-2 exp-3";
+
+  gap: 16px;
+  width: 985px;
+}
+
+.exp-1 {
+  grid-area: exp-1;
+  background-color: #F7ECF4;
+}
+.exp-2 {
+  grid-area: exp-2;
+  background-color: #FFF1D7;
+}
+.exp-3 {
+  grid-area: exp-3;
+  background-color: #FFD7D7;
+}
+
+.exp {
+  @include border;
+  padding: 32px 48px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  transition: 0.3s
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: $primary-brown;
+  margin: 8px 0px;
+}
+
+.company-logo {
+  @include border;
+  position: absolute;
+  background-color: $background-eggshell;
+  height: 66px;
+  width: auto;
+  padding: 8px 16px;
+  top: 0px;
+  left: 100%;
+  transform: translateX(-100%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.3s;
+}
+
+.exp:hover {
+  transform: scale(1.03);
+  z-index: 2;
+  .company-logo {
+    top: 40px;
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(20deg) translateX(-80%);
+  }
 }
