@@ -2,12 +2,35 @@ import doyoonLogo from './images/doyoon-logo.png';
 import listenMorePhoto from './images/listenMore.png';
 import wonLogo from './images/won-logo.png';
 import mobialsLogo from './images/mobials-logo.png';
-import aiLogo from './images/ai.svg';
-import psLogo from './images/ps.svg';
+import aiLogo from './images/tools/ai.svg';
+import psLogo from './images/tools/ps.svg';
+import cLogo from './images/tools/c.svg';
+import cssLogo from './images/tools/css.svg';
+import figmaLogo from './images/tools/figma.svg';
+import htmlLogo from './images/tools/html.svg';
+import jsLogo from './images/tools/js.svg';
+import sassLogo from './images/tools/sass.svg';
+import pythonLogo from './images/tools/python.svg';
+import reactLogo from './images/tools/react.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import { faReact, faHtml5, faCss3Alt, faSass, faJs, faPython, faFigma, faPs} from '@fortawesome/free-brands-svg-icons'
 function App() {
+
+  let tools = [[{name: 'JavaScript', svg: jsLogo, primary: '#f7e017', secondary: 'black'},
+                {name: 'Python', svg: pythonLogo, primary: '#ffd040', secondary: '#3676aa'},
+                {name: 'C', svg: cLogo, primary: '01589d', secondary: 'white'}
+               ],
+               [{name: 'React', svg: reactLogo, primary: '#f7e017', secondary: 'black'},
+                {name: 'HTML', svg: htmlLogo, primary: '#ffd040', secondary: '#3676aa'},
+                {name: 'CSS', svg: cssLogo, primary: '01589d', secondary: 'white'},
+                {name: 'SASS', svg: sassLogo, primary: '01589d', secondary: 'white'}
+               ],
+               [{name: 'Figma', svg: figmaLogo, primary: '#f7e017', secondary: 'black'},
+                {name: 'Photoshop', svg: psLogo, primary: '#ffd040', secondary: '#3676aa'},
+                {name: 'Illustrator', svg: aiLogo, primary: '01589d', secondary: 'white'}
+               ]];
+
+
   return (
     <div className="App">
       <nav className="navbar">
@@ -32,12 +55,11 @@ function App() {
               <h3>ListenMore</h3>
               <div className='tech-used-group'>
                 <div className='tech-button'>
-                  <FontAwesomeIcon icon={faReact} />
+                <img className='tech-icon' src={reactLogo} height='48' alt="react logo" style={{ backgroundColor: '#551F00' }} />
                   <h6 className='tech-button-text'>React</h6>
                 </div>
                 <div className='tech-button'>
-                  <FontAwesomeIcon icon={faFigma} />
-                  <h6 className='tech-button-text'>Figma</h6>
+                  <img className='tech-icon' src={figmaLogo} height='48' alt="figma logo" style={{ backgroundColor: '#551F00' }} />
                 </div>
               </div>
             </div>
@@ -103,45 +125,31 @@ function App() {
       <div className='skills-section'>
         <h2>Skills</h2>
         <div className='skills-flex'>
-        <div className='tech-box'>
-            <FontAwesomeIcon icon={faJs} size='3x' />
-            <h4> JavaScript </h4>
-          </div>
-          <div className='tech-box'>
-            <FontAwesomeIcon icon={faPython} size='3x' />
-            <h4> Python </h4>
-          </div>
-          <div className='tech-box'>
-            <h4> C </h4>
-          </div>
-          <div className='tech-box'>
-            <FontAwesomeIcon icon={faReact} size='3x' />
-            <h4> React </h4>
-          </div>
-          <div className='tech-box'>
-            <FontAwesomeIcon icon={faHtml5} size='3x' />
-            <h4> HTML </h4>
-          </div>
-          <div className='tech-box'>
-            <FontAwesomeIcon icon={faCss3Alt} size='3x' />
-            <h4> CSS </h4>
-          </div>
-          <div className='tech-box'>
-            <FontAwesomeIcon icon={faSass} size='3x' />
-            <h4> SASS </h4>
-          </div>
-          <div className='tech-box'>
-            <FontAwesomeIcon icon={faFigma} size='3x' />
-            <h4> Figma </h4>
-          </div>
-          <div className='tech-box'>
-            <img src={psLogo}></img>
-            <h4> Photoshop </h4>
-          </div>
-          <div className='tech-box'>
-            <img src={aiLogo}></img>
-            <h4> Illustrator </h4>
-          </div>
+            {tools.map((row, index) => (
+              <div className='skills-row'>
+                
+                {row.map((tool, index) => (
+                  <div
+                    className='tech-box'
+                    key={index}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.querySelector('.tech-icon').style.color = tool.primary;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.querySelector('.tech-icon').style.color = '#551F00';
+                    }}
+                  >
+                    
+                    <img className='tech-icon' src={tool.svg} height='48' alt={tool.name} />
+                    <div className='name-a-underline'>
+                      <div className='underline' style={{ backgroundColor: tool.primary }}></div>
+                      <h4 style={{ color: '#551F00' }}>{tool.name}</h4>
+                    </div>
+                    
+                  </div>
+                ))}
+              </div>
+            ))}
         </div>
       </div>
     </div>

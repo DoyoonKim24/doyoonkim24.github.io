@@ -289,4 +289,64 @@ a {
   visibility: visible;
   opacity: 1;
   transform: rotate(20deg) translateX(-80%);
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  padding: 64px 0px;
+}
+
+.skills-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 985px;
+}
+
+.skills-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 48px;
+  width: 985px;
+}
+
+.tech-box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: 0.2s;
+  padding: 4px 8px;
+}
+
+.tech-icon {
+  transition: 0.2s;
+}
+
+.name-a-underline {
+  position: relative;
+}
+
+.underline {
+  z-index: -1;
+  position: absolute;
+  width: 0;
+  height: 14px;
+  left: 10px;
+  bottom: 0px;
+  transition: 0.2s;
+}
+
+.tech-box:hover .underline {
+  width: 100%;
+}
+
+.logo-container {
+  width: 50px;
+  height: 50px;
 }/*# sourceMappingURL=index.css.map */
