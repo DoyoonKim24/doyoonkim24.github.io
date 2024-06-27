@@ -335,11 +335,27 @@ a {
   transition: 0.2s;
 }
 
-.tech-box:hover .underline {
-  width: 100%;
+
+.tech-icon-container {
+  position: relative;
 }
 
-.logo-container {
-  width: 50px;
-  height: 50px;
+.mono-tech-icon {
+  position: absolute;
+  left: 0;
+  transition: 0.2s;
+}
+
+.tech-box:hover {
+  .underline {
+    width: 100%;
+  }
+  .mono-tech-icon {
+    opacity: 0;
+  }
+}
+
+.mono-tech-icon:hover {
+  position: absolute;
+  left: 20;
 }

@@ -342,11 +342,24 @@ a {
   transition: 0.2s;
 }
 
+.tech-icon-container {
+  position: relative;
+}
+
+.mono-tech-icon {
+  position: absolute;
+  left: 0;
+  transition: 0.2s;
+}
+
 .tech-box:hover .underline {
   width: 100%;
 }
+.tech-box:hover .mono-tech-icon {
+  opacity: 0;
+}
 
-.logo-container {
-  width: 50px;
-  height: 50px;
+.mono-tech-icon:hover {
+  position: absolute;
+  left: 20;
 }/*# sourceMappingURL=index.css.map */
