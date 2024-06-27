@@ -9,6 +9,11 @@
   padding: 64px 0px;
 }
 
+@mixin container() {
+  width: 73%;
+  max-width: 985px;
+}
+
 @mixin border($radius: 25px) {
   border: 3px solid $primary-brown;
   border-radius: $radius;
@@ -86,13 +91,11 @@ a {
     font-weight: 600;
 }
 
-.App {
-  width: 100%;
-}
 .navbar {
   position: fixed;
-  left: 128px;
-  right: 128px;
+  width: 80%;
+  left: 50%;
+  transform:translateX(-50%);
   display: flex;
   flex-direction: row;
   background-color: #FFF9F1;
@@ -130,12 +133,12 @@ a {
   @include header-and-content();
 }
 
-.projects-flex {
+.projects-container {
+  @include container();
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  width: 985px;
 }
 
 .project {
@@ -160,7 +163,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%; /* Ensure it takes full height of .project */
+  height: 100%;
 }
 
 .product-image {
@@ -218,20 +221,22 @@ a {
 
 }
 
+
+
+
 .experience-section {
   @include header-and-content();
 
 }
 
-.experience-grid {
+.experience-container {
+  @include container();
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: "exp-1 exp-1"
                        "exp-2 exp-3";
-
   gap: 16px;
-  width: 985px;
 }
 
 .exp-1 {
@@ -294,19 +299,20 @@ a {
   @include header-and-content();
 }
 
-.skills-flex {
+.skills-container {
+  @include container();
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  width: 985px;
 }
+
 .skills-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 48px;
-  width: 985px;
+  width: 100%;
 }
 
 .tech-box {
@@ -358,4 +364,16 @@ a {
 .mono-tech-icon:hover {
   position: absolute;
   left: 20;
+}
+
+
+.about-section {
+  @include header-and-content();
+}
+
+.about-flex {
+  @include border();
+
+  width: 100%;
+  height: 50vh;
 }
