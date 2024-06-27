@@ -38,7 +38,7 @@ export default function Projects() {
               <img
                 className="product-image"
                 src={listenMorePhoto}
-                alt="Photo of ListenMore App"
+                alt="ListenMore App"
               />
             </div>
             <div className="arrow-container">
@@ -65,7 +65,7 @@ export default function Projects() {
               <img
                 className="product-image"
                 src={listenMorePhoto}
-                alt="Photo of ListenMore App"
+                alt="ListenMore App"
               />
             </div>
             <div className="arrow-container">

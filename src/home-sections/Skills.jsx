@@ -94,9 +94,9 @@ export default function Skills() {
                   <div className="name-a-underline">
                     <div
                       className="underline"
-                      style={{ backgroundColor: tool.primary }}
+                      style={{ backgroundColor: tool.primary}}
                     ></div>
-                    <h4>{tool.name}</h4>
+                    <h4 style={{ position: 'relative', zIndex: 1 }} >{tool.name}</h4>
                   </div>
                 </div>
               ))}
