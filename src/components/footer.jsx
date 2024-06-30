@@ -15,7 +15,7 @@ export default function Footer() {
                         <a className='footer-font' href="mailto:kimdoyo424@gmail.com"> <FontAwesomeIcon icon={faEnvelope} /> Email</a>
                         <a className='footer-font' href="mailto:kimdoyo424@gmail.com"> <FontAwesomeIcon icon={faFile} /> Resume </a> 
                     </div>
-                    <p>Designed with Figma and programmed in VS Code<br/>with React and Sass.</p>
+                    <p>Designed with Figma and programmed in VS Code with React and Sass.</p>
                 </div>
             </div>
         </footer>
