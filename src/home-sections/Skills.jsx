@@ -80,7 +80,7 @@ export default function Skills() {
       ];
 
     return (
-    <div className="skills-section">
+    <div className="skills-section" id="skills">
         <h2>Skills</h2>
         <div className="skills-container">
           {tools.map((row, index) => (

@@ -3,7 +3,7 @@ import mobialsLogo from "../images/mobials-logo.png";
 
 export default function Experience() {
     return (
-      <div className="experience-section">
+      <div className="experience-section" id="work">
         <h2>Work Experience</h2>
         <div className="experience-container">
           <div className="exp exp-1">

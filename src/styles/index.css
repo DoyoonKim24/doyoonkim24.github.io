@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "New Kansas", "sans-serf";
@@ -69,6 +73,8 @@ a {
   font-family: "Basic Sans", "MS Sans Serif";
   font-size: 1.25rem;
   font-weight: 600;
+  text-decoration: none;
+  color: #551F00;
 }
 
 .navbar {
@@ -83,7 +89,7 @@ a {
   align-items: center;
   margin: 16px 0;
   padding: 8px 16px;
-  z-index: 10;
+  z-index: 1000;
   border: 3px solid #551F00;
   border-radius: 50px;
   box-shadow: 3px 3px 0px #551F00;
@@ -117,7 +123,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 64px;
-  padding: 64px 0px;
+  padding: 128px 0px;
 }
 
 .projects-container {
@@ -215,7 +221,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 64px;
-  padding: 64px 0px;
+  padding: 128px 0px;
 }
 
 .experience-container {
@@ -296,7 +302,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 64px;
-  padding: 64px 0px;
+  padding: 128px 0px;
   background-color: #CEC9D8;
 }
 
@@ -306,14 +312,14 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 48px;
 }
 
 .skills-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 48px;
+  gap: 72px;
   width: 100%;
 }
 
@@ -370,7 +376,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 64px;
-  padding: 64px 0px;
+  padding: 128px 0px;
 }
 
 .about-container {
@@ -428,6 +434,26 @@ li {
   border-radius: 50%;
   position: absolute;
   top: 15px;
+  right: 15px;
+}
+
+.pin3 {
+  width: 10px;
+  height: 10px;
+  background-color: #551F00;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.pin4 {
+  width: 10px;
+  height: 10px;
+  background-color: #551F00;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 15px;
   right: 15px;
 }
 

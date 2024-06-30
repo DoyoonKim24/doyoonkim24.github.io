@@ -5,6 +5,7 @@ import Skills from "./home-sections/Skills";
 import doyoon from "./images/doyoon.jpg"
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
+import { useEffect } from "react";
 
 
 gsap.registerPlugin(Draggable);
@@ -13,19 +14,43 @@ function App() {
   Draggable.create(".about-card", {
     bounds: ".about-container"
   });
+  useEffect(() => {
+    const handleSmoothScroll = (event) => {
+      event.preventDefault();
+      const targetId = event.currentTarget.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    };
+
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach((anchor) => {
+      anchor.addEventListener("click", handleSmoothScroll);
+    });
+
+    return () => {
+      anchorLinks.forEach((anchor) => {
+        anchor.removeEventListener("click", handleSmoothScroll);
+      });
+    };
+  }, []);
 
   return (
     <div className="App">
       <nav className="navbar">
-        <img src={doyoonLogo} alt="Doyoon Face Logo" height="32" />
+        <a href="#home"> <img src={doyoonLogo} alt="Doyoon Face Logo" height="32" /> </a>
         <div className="nav-group">
-          <a href="https://doyoonkim24.github.io/">Projects</a>
-          <a href="https://doyoonkim24.github.io/">Work</a>
-          <a href="https://doyoonkim24.github.io/">Skills</a>
-          <a href="https://doyoonkim24.github.io/">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
         </div>
       </nav>
-      <div className="hero-section">
+      <div className="hero-section" id="home">
         <h4>Doyoon Kim</h4>
         <h1 className="hero-header">
           Software Developer <br />
@@ -38,33 +63,14 @@ function App() {
       <Skills />
       <div className="divider"/>
 
-      <div className="about-section">
+      <div className="about-section" id="about">
         <h2> About Me </h2>
         <div className="about-container">
-          <div className="about-card" style={{width: "380px", backgroundColor: "#FFD7D7"}}>
-            <div className="pin1"></div>
-            <div className="pin2"></div>
-            <h5 className="about-card-title" >Education</h5>
-            <div className="about-line"></div>
-            <ul>
-              <li><p>University of Waterloo</p></li>
-              <li><p>Bachelors of Computer Science</p></li>
-              <li><p>Minor in Music and Digital Arts Communication</p></li>
-            </ul>
-          </div>
-          <div className="about-card" style={{backgroundColor: "#EEF8DA"}}>
-            <div className="pin1"></div>
-            <div className="pin2"></div>
-            <h5 className="about-card-title">Hobbies</h5>
-            <div className="about-line"></div>
-            <ol>
-              <li><p>Playing Trumpet</p></li>
-              <li><p>Baking</p></li>
-              <li><p>Crochet</p></li>
-              <li><p>Raptors Basketball</p></li>
-            </ol>
-          </div>
-          <div className="about-card" style={{width: "500px", backgroundColor: "#FFF1D7" }}>
+          <div className="pin1"></div>
+          <div className="pin2"></div>
+          <div className="pin3"></div>
+          <div className="pin4"></div>
+          <div className="about-card" style={{width: "500px", backgroundColor: "#FFF1D7", top:"50%", left:"6%", transform:"translateY(-50%)"}}>
             <div className="pin1"></div>
             <div className="pin2"></div>
             <h5 className="about-card-title">About</h5>
@@ -79,16 +85,40 @@ function App() {
               designing a user-friendly interface, I'm all about making things that work well and look great.
               <br/>
               <br/>
-              I’m always open to connect so please feel free to reach out! Let's create something awesome together!</p>
+              I’m always open to connect so please feel free to reach out! Let's create something awesome together!
+            </p>
           </div>
-          <div className="about-card" style={{backgroundColor: "#DAEFF8"}}> 
+          <div className="about-card" style={{backgroundColor: "#EEF8DA", bottom:"3%", left:"43%"}}>
+            <div className="pin1"></div>
+            <div className="pin2"></div>
+            <h5 className="about-card-title">Hobbies</h5>
+            <div className="about-line"></div>
+            <ol>
+              <li><p>Playing Trumpet</p></li>
+              <li><p>Baking</p></li>
+              <li><p>Crochet</p></li>
+              <li><p>Raptors Basketball</p></li>
+            </ol>
+          </div>
+          <div className="about-card" style={{width: "380px", backgroundColor: "#FFD7D7", top:"7%", left:"44%"}}>
+            <div className="pin1"></div>
+            <div className="pin2"></div>
+            <h5 className="about-card-title" >Education</h5>
+            <div className="about-line"></div>
+            <ul>
+              <li><p>University of Waterloo</p></li>
+              <li><p>Bachelors of Computer Science</p></li>
+              <li><p>Minor in Music and Digital Arts Communication</p></li>
+            </ul>
+          </div>
+          <div className="about-card" style={{backgroundColor: "#DAEFF8", bottom:"15%", right:"5%"}}> 
             <div className="pin1"></div>
             <div className="pin2"></div>
             <h5 className="about-card-title">Me!</h5>
             <div className="about-line"></div>
             <img src={ doyoon } alt="Doyoon smiling in the mountains" height='250px' style={{ borderRadius: "15px"}}/>
           </div>
-          <div className="about-card" style={{backgroundColor: "#F4DAF8"}}>
+          <div className="about-card" style={{backgroundColor: "#F4DAF8", bottom:"22%", right:"26%"}}>
             <div className="pin1"></div>
             <div className="pin2"></div>
             <h5 className="about-card-title">Socials</h5>

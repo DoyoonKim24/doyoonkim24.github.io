@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   gap: 64px;
-  padding: 64px 0px;
+  padding: 128px 0px;
 }
 
 @mixin container() {
@@ -23,6 +23,11 @@
 * {
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: $primary-font-family;
@@ -89,6 +94,8 @@ a {
     font-family: $secondary-font-family;
     font-size: 1.25rem;
     font-weight: 600;
+    text-decoration:none;
+    color: $primary-brown;
 }
 
 .navbar {
@@ -103,7 +110,7 @@ a {
   align-items: center;
   margin: 16px 0;
   padding: 8px 16px;
-  z-index: 10;
+  z-index: 1000;
   @include border($radius: 50px);
 }
 
@@ -305,14 +312,14 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 48px;
 }
 
 .skills-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 48px;
+  gap: 72px;
   width: 100%;
 }
 
@@ -365,6 +372,11 @@ a {
   position: absolute;
   left: 20;
 }
+
+
+.divider {
+}
+
 
 
 .about-section {
@@ -421,6 +433,24 @@ li {
   border-radius: 50%;
   position: absolute;
   top: 15px;
+  right: 15px;
+}
+.pin3 {
+  width: 10px;
+  height: 10px;
+  background-color: $primary-brown;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+.pin4 {
+  width: 10px;
+  height: 10px;
+  background-color: $primary-brown;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 15px;
   right: 15px;
 }
 

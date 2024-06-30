@@ -7,7 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Projects() {
     return (
-        <div className="projects-section">
+        <div className="projects-section" id="projects" >
         <h2>Personal Projects</h2>
         <div className="projects-container">
           <div className="project">
