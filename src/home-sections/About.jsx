@@ -6,9 +6,10 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 export default function About() {
   gsap.registerPlugin(Draggable);
-  Draggable.create(".about-card", {
-    bounds: ".about-container",
+  Draggable.create(".card", {
+    bounds: ".about-container"
   });
+  Draggable.zIndex = 10;
 
   return (
     <div className="about-section" id="about">

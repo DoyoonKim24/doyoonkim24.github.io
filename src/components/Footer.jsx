@@ -13,7 +13,7 @@ export default function Footer() {
                         <a className='footer-font' href="https://www.linkedin.com/in/doyoonkim24/" target="_blank" rel="noreferrer"> <FontAwesomeIcon icon={faLinkedin} /> LinkedIn </a>
                         <a className='footer-font' href="https://github.com/DoyoonKim24/" target="_blank" rel="noreferrer"> <FontAwesomeIcon icon={faGithub} /> Github </a>
                         <a className='footer-font' href="mailto:kimdoyo424@gmail.com"> <FontAwesomeIcon icon={faEnvelope} /> Email</a>
-                        <a className='footer-font' href="mailto:kimdoyo424@gmail.com"> <FontAwesomeIcon icon={faFile} /> Resume </a> 
+                        <a className='footer-font' href="https://drive.google.com/file/d/1ULDChhq24Afx0FQxgYNWhRofE7_2GHSh/view?usp=sharing" target="_blank" rel="noreferrer"> <FontAwesomeIcon icon={faFile} /> Resume </a> 
                     </div>
                     <p>Designed with Figma and programmed in VS Code with React and Sass.</p>
                 </div>
