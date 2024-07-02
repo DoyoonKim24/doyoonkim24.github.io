@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import doyoon from "../images/doyoon.jpg";
@@ -5,11 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 export default function About() {
-  gsap.registerPlugin(Draggable);
-  Draggable.create(".card", {
-    bounds: ".about-container"
-  });
-  Draggable.zIndex = 10;
+  useEffect(() => {
+    gsap.registerPlugin(Draggable);
+
+    Draggable.create(".card", {
+      bounds: ".about-container"
+    });
+    
+    Draggable.zIndex = 10;
+    
+  }, []);
 
   return (
     <div className="about-section" id="about">
