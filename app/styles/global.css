@@ -8,7 +8,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "New Kansas", "sans-serf";
+  font-family: "New Kansas", "sans-serif";
   color: #551F00;
   background-color: #F8ECDA;
 }
@@ -30,7 +30,7 @@ h3 {
   margin: 0;
   font-size: 2.441rem;
   font-weight: 600;
-  font-family: "New Kansas", "sans-serf";
+  font-family: "New Kansas", "sans-serif";
 }
 
 h4 {
@@ -116,18 +116,38 @@ a {
 
 .hero-section {
   height: 100vh;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 168px;
+  gap: 32px;
 }
 
 .hero-header {
-  text-align: center;
+  width: 100%;
 }
 
+.hero-images {
+  position: relative;
+}
+
+.spinny {
+  position: absolute;
+  left: -60px;
+  top: -60px;
+  animation: spin 8s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 .projects-section {
   background-color: #D2D8C9;
   display: flex;
@@ -525,7 +545,7 @@ li {
 }
 
 .about-card-title {
-  font-family: "New Kansas", "sans-serf";
+  font-family: "New Kansas", "sans-serif";
 }
 
 .about-line {
@@ -556,7 +576,7 @@ li {
 }
 
 .footer-font {
-  font-family: "New Kansas", "sans-serf";
+  font-family: "New Kansas", "sans-serif";
   font-weight: 500;
 }
 

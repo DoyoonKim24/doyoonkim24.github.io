@@ -1,5 +1,5 @@
-import wonLogo from "../images/won-logo.png";
-import mobialsLogo from "../images/mobials-logo.png";
+import wonLogo from "../../public/images/won-logo.png";
+import mobialsLogo from "../../public/images/mobials-logo.png";
 import Image from "next/image";
 
 export default function Experience() {

@@ -1,15 +1,16 @@
 
-import listenMorePhoto from "../images/listenMore.png";
-import accentAcePhoto from "../images/accentace.png";
-import figmaLogo from "../images/tools/figma-mono.svg";
-import reactLogo from "../images/tools/react-mono.svg";
-import pythonLogo from "../images/tools/python-mono.svg";
+import listenMorePhoto from "../../public/images/listenMore.png";
+import accentAcePhoto from "../../public/images/accentace.png";
+import dateJournalPhoto from "../../public/images/date-journal.png";
+import figmaLogo from "../../public/images/tools/figma-mono.svg";
+import reactLogo from "../../public/images/tools/react-mono.svg";
+import pythonLogo from "../../public/images/tools/python-mono.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
 export default function Projects() {
-  let projects = [{name: "Date Journal", tools: [{name: "React", icon: reactLogo}, {name: "Figma", icon: figmaLogo}], image:listenMorePhoto, link: "https://github.com/DoyoonKim24/ListenMore"},
+  let projects = [{name: "Date Journal", tools: [{name: "React", icon: reactLogo}, {name: "Figma", icon: figmaLogo}], image:dateJournalPhoto, link: "https://github.com/DoyoonKim24/ListenMore"},
                   {name: "ListenMore", tools: [{name: "React", icon: reactLogo}, {name: "Figma", icon: figmaLogo}], image:listenMorePhoto, link: "https://github.com/DoyoonKim24/ListenMore"},
                   {name: "Accent Ace", tools: [{name: "Python", icon: pythonLogo}, {name: "Figma", icon: figmaLogo}], image:accentAcePhoto, link: "https://devpost.com/software/pronunciationgo"}];
   return (
@@ -37,6 +38,7 @@ export default function Projects() {
           <div className="image-container">
             <Image
               className="product-image"
+              style={{height: project.name === "Date Journal" ? 270 : 216 }}
               src={project.image}
               alt={project.name}
             />

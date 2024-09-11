@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faFile } from '@fortawesome/free-solid-svg-icons'
-import doyoonLogo from "../images/doyoon-logo.png";
+import doyoonLogo from "../../public/images/doyoon-logo.png";
 import Image from 'next/image'
 
 export default function Footer() {

@@ -7,6 +7,10 @@ import Skills from "./home-sections/Skills";
 import About from "./home-sections/About";
 import Footer from "./components/Footer";
 import { useEffect } from "react";
+import Image from "next/image";
+import landingIllustration from "../public/images/landing-illustration.png";
+import spinny from "../public/images/spinning.png";
+import heroHello from "../public/images/hero-hello.png";
 
 function App() {
   useEffect(() => {
@@ -38,11 +42,11 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="hero-section" id="home">
-        <h4>Doyoon Kim</h4>
-        <h1 className="hero-header">
-          Software Developer <br />
-          and Designer
-        </h1>
+        <Image className="hero-header" src={heroHello} alt="Hello, I'm Doyoon!" width={800} style={{objectFit: 'contain'}}/>
+        <div className="hero-images">
+          <Image src={landingIllustration} alt="landing image" width={1000}/>
+          <Image src={spinny} className="spinny" alt="software developer and designer spinning icon" width={150}/>
+        </div>
       </div>
 
       <Projects />
