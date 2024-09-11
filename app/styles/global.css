@@ -177,7 +177,8 @@ a {
   border: 3px solid #551F00;
   border-radius: 25px;
   box-shadow: 3px 3px 0px #551F00;
-  transition: 0.3s;
+  transform: translateY(50px);
+  transition: transform 0.4s, opacity 0.6s ease;
 }
 
 .project-info {
@@ -228,8 +229,14 @@ a {
 
 .arrow-container {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.coming-soon {
+  opacity: 0;
+  transition: 0.3s;
 }
 
 .arrow {
@@ -239,6 +246,7 @@ a {
 .project:hover {
   box-shadow: 6px 6px 0px;
   transform: scale(1.05);
+  z-index: 10;
   cursor: pointer;
 }
 .project:hover .product-image {
@@ -249,6 +257,9 @@ a {
 }
 .project:hover .arrow {
   transform: rotate(-45deg);
+}
+.project:hover .coming-soon {
+  opacity: 1;
 }
 
 .experience-section {
@@ -585,6 +596,16 @@ li {
   flex-direction: column;
   gap: 8px;
   align-items: flex-start;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 @media only screen and (max-width: 1200px) {
