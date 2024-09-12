@@ -19,7 +19,7 @@ export default function About() {
     
   }, []);
 
-  const { ref: ref, inView: inView } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true
   });
