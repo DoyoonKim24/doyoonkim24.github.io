@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Image from "next/image";
+import { useInView } from 'react-intersection-observer';
 export default function About() {
   useEffect(() => {
     gsap.registerPlugin(Draggable);
@@ -18,17 +19,20 @@ export default function About() {
     
   }, []);
 
+  const { ref: ref, inView: inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
   return (
     <div className="about-section" id="about">
       <h2> About Me </h2>
-      <div className="about-container">
+      <div className={`about-container ${inView ? 'fade-in' : 'fade-out'}`} ref={ref}>
         <div className="pin1"></div>
         <div className="pin2"></div>
         <div className="pin3"></div>
         <div className="pin4"></div>
-        <div
-          className="about-card card"
-        >
+        <div className="about-card card">
           <div className="pin1"></div>
           <div className="pin2"></div>
           <h5 className="about-card-title">About</h5>
@@ -52,9 +56,7 @@ export default function About() {
             create something awesome together!
           </p>
         </div>
-        <div
-          className="hobbies-card card"
-        >
+        <div className="hobbies-card card">
           <div className="pin1"></div>
           <div className="pin2"></div>
           <h5 className="about-card-title">Hobbies</h5>
@@ -99,7 +101,6 @@ export default function About() {
           <Image className="real-doyoon-image"
             src={doyoon}
             alt="Doyoon smiling in the mountains"
-            height={250}
           />
         </div>
         <div className="socials-card card">

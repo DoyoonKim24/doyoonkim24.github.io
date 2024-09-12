@@ -11,6 +11,7 @@ import Image from "next/image";
 import landingIllustration from "../public/images/landing-illustration.png";
 import spinny from "../public/images/spinning.png";
 import heroHello from "../public/images/hero-hello.png";
+import { useInView } from 'react-intersection-observer';
 
 function App() {
   useEffect(() => {
@@ -38,14 +39,30 @@ function App() {
     };
   }, []);
 
+  const { ref: ref1, inView: inView1 } = useInView({
+    threshold: 0.5,
+    triggerOnce: true
+  });
+
+  const { ref: ref2, inView: inView2 } = useInView({
+    threshold: 0.5,
+    triggerOnce: true
+  });
+
+
   return (
     <div className="App">
       <Navbar />
       <div className="hero-section" id="home">
-        <Image className="hero-header" src={heroHello} alt="Hello, I'm Doyoon!" width={800} style={{objectFit: 'contain'}}/>
-        <div className="hero-images">
-          <Image src={landingIllustration} alt="landing image" width={1000}/>
-          <Image src={spinny} className="spinny" alt="software developer and designer spinning icon" width={150}/>
+        <Image 
+          className={`hero-header ${inView1 ? 'fade-in' : 'fade-out'}`} 
+          src={heroHello} 
+          alt="Hello, I'm Doyoon!"
+          ref={ref1}
+        />
+        <div className={`hero-images ${inView2 ? 'fade-in' : 'fade-out'}`} style={{transition: '0.5s', transitionDelay: '0.1s'}} ref={ref2}>
+          <Image className='hero-drawing' src={landingIllustration} alt="landing image" width={0} height={0} style={{ width: '100%', height: 'auto' }}/>
+          <Image className='spinny' src={spinny} alt="software developer and designer spinning icon"/>
         </div>
       </div>
 

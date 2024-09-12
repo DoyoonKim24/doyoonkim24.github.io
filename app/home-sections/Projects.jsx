@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Projects() {
   let projects = [
-    { name: "Date Journal", tools: [{ name: "React", icon: reactLogo }, { name: "Figma", icon: figmaLogo }], image: dateJournalPhoto, link: "" },
+    { name: "Date Journal", tools: [{ name: "React Native", icon: reactLogo }, { name: "Figma", icon: figmaLogo }], image: dateJournalPhoto, link: "" },
     { name: "ListenMore", tools: [{ name: "React", icon: reactLogo }, { name: "Figma", icon: figmaLogo }], image: listenMorePhoto, link: "https://github.com/DoyoonKim24/ListenMore" },
     { name: "Accent Ace", tools: [{ name: "Python", icon: pythonLogo }, { name: "Figma", icon: figmaLogo }], image: accentAcePhoto, link: "https://devpost.com/software/pronunciationgo" }
   ];
@@ -30,7 +30,7 @@ export default function Projects() {
 
 function ProjectCard({ project }) {
   const { ref, inView } = useInView({
-    threshold: 0.4,
+    threshold: 0.5,
     triggerOnce: true
   });
 
@@ -49,6 +49,7 @@ function ProjectCard({ project }) {
       target="_blank"
       rel="noopener noreferrer"
     >
+      {project.name === "Date Journal" ? <h5 className='coming-soon-mini'>Coming Soon!</h5> : null }
       <div className="project-info">
         <h3>{project.name}</h3>
         <div className="tech-used-group">
@@ -67,8 +68,7 @@ function ProjectCard({ project }) {
       </div>
       <div className="image-container">
         <Image
-          className="product-image"
-          style={{ height: project.name === "Date Journal" ? 270 : 216 }}
+          className={`product-image ${project.name === "Date Journal" ? "big-product-image" : null}`}
           src={project.image}
           alt={project.name}
         />

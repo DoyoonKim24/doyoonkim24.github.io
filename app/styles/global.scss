@@ -134,26 +134,34 @@ a {
 }
 
 .hero-section {
-  height: 100vh;
-  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 168px;
+  padding-top: 160px;
+  padding-bottom: 144px;
   gap: 32px;
 }
 
 .hero-header {
-  width: 100%;
+  width: 800px;
+  transition: 0.5s;
+  object-fit: contain;
+  height: auto;
 }
 .hero-images {
-  position:relative
-
+  display: flex;
+  justify-content: center;
+  position:relative;
+  width: 70%;
+  max-width: 1300px;
 }
+
 
 .spinny {
   position: absolute;
+  width: 150px;
+  height: 150px;
   left: -60px;
   top: -60px;
   animation: spin 8s infinite linear;
@@ -211,6 +219,10 @@ a {
   height: 100%;
 }
 
+.big-product-image {
+  height: 200px !important;
+}
+
 .product-image {
   width: auto;
   height: 180px;
@@ -251,6 +263,13 @@ a {
   transition: 0.3s;
 }
 
+.coming-soon-mini {
+  position: absolute;
+  top: 15;
+  left: 15;
+  display: none;
+}
+
 .arrow {
   transition: 0.3s;
 }
@@ -260,6 +279,9 @@ a {
   z-index: 10;
   cursor: pointer;
 
+  .big-product-image {
+    height: 260px !important;
+  }
   .product-image {
     visibility: visible;
     opacity: 1;
@@ -288,21 +310,25 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: "exp-1 exp-1"
-                       "exp-2 exp-3";
+                       "exp-2 exp-2"
+                       "exp-3 exp-4";
   gap: 16px;
 }
-
 .exp-1 {
   grid-area: exp-1;
   background-color: #F7ECF4;
 }
 .exp-2 {
   grid-area: exp-2;
-  background-color: #FFF1D7;
+  background-color: #FFD7D7;
 }
 .exp-3 {
   grid-area: exp-3;
-  background-color: #FFD7D7;
+  background-color: #FFF1D7;
+}
+.exp-4 {
+  grid-area: exp-4;
+  background-color: #dfe6d5;
 }
 
 .exp {
@@ -312,7 +338,7 @@ a {
   flex-direction: column;
   position: relative;
   z-index: 0;
-  transition: 0.3s
+  transition: 0.5s
 }
 
 .line {
@@ -365,6 +391,7 @@ a {
   display: flex;
   flex-direction: row;
   width: 100%;
+  transition: 0.5s;
 }
 
 .skills-full {
@@ -440,10 +467,11 @@ a {
 .about-container {
   @include border();
   background-color: #FFC09C;
-
   width: 80%;
-  height: 80vh;
+  max-width: 1400px;
+  height: 700px;
   position: relative;
+  transition: 0.5s
 }
 ul {
   list-style: none;
@@ -505,6 +533,8 @@ li {
 }
 
 .real-doyoon-image {
+  height: 250px;
+  width: auto;
   border-radius: 15px;
 }
 
@@ -634,6 +664,15 @@ li {
   p {
     font-size: 1rem;
   }
+  .hero-header {
+    width: 650px;
+  }
+  .spinny {
+    width: 120px;
+    height: 120px;
+    top: -50px;
+    left: -50px;
+  }
 
   .product-image {
     height: 100px;
@@ -641,7 +680,7 @@ li {
 
   .project:hover {
     .product-image {
-      height: 180px;
+      height: 190px;
     }
   }
 
@@ -659,6 +698,16 @@ li {
 
   .nav-face-name-logo {
     height: 26px;
+  }
+
+  .hero-header {
+    width: 500px;
+  }
+  .spinny {
+    width: 100px;
+    height: 100px;
+    top: -40px;
+    left: -40px;
   }
 
   .projects-container {
@@ -682,10 +731,7 @@ li {
     height: 160px;
     visibility: visible;
     opacity: 1;
-  }
-
-  .about-container {
-    height: 90vh;
+    
   }
 
   .about-card {
@@ -775,6 +821,17 @@ li {
     height: 32px;
     visibility: visible;
   }
+
+  .hero-header {
+    width: 425px;
+  }
+
+  .spinny {
+    width: 80px;
+    height: 80px;
+    top: -35px;
+    left: -35px;
+  }
   
   .projects-section {
   padding: 64px 0;
@@ -803,9 +860,39 @@ li {
 
   .product-image {
     position: absolute;
-    top: -56px;
-    right: -200px;
+    top: -20px;
+    right: -170px;
     transform: rotate(-12deg);
+    height: 130px;
+  }
+
+  .big-product-image {
+    top: -50px;
+    right: -140px;
+    transform: rotate(-12deg);
+    height: 180px !important;
+  }
+  .coming-soon {
+    opacity: 1;
+  }
+  
+  .project:hover {
+    box-shadow: 3px 3px 0px;
+    transform: scale(1);
+    z-index: 1;
+
+    .product-image {
+      top: -20px;
+      right: -170px;
+      transform: rotate(-12deg);
+      height: 130px;
+    }
+    .big-product-image {
+      top: -50px;
+      right: -140px;
+      transform: rotate(-12deg);
+      height: 180px !important;
+    }
   }
 
   .project-tech-icon {
@@ -825,10 +912,13 @@ li {
     height: 40px;
   }
 
-  .about-container {
-    height: 90vh;
+
+  .company-logo {
+    display: none;
   }
-  
+  .about-container {
+    height: 800px;
+  }
   .about-card {
     width: 400px;
     top: 25%;
@@ -883,6 +973,18 @@ li {
   h2 {
     font-size: 2.44rem;
   }
+
+  .hero-header {
+    width: 400px;
+  }
+
+  .spinny {
+    width: 70px;
+    height: 70px;
+    top: -30px;
+    left: -30px;
+  }
+
   .projects-container {
     gap: 64px;
   }
@@ -895,10 +997,38 @@ li {
   }
 
   .product-image {
-    height: 130px;
+    height: 150px;
     top: -40px;
-    right: -120px;
+    right: -140px;
     transform: rotate(12deg);
+  }
+  .big-product-image {
+    height: 170px !important;
+    top: -40px;
+    right: -100px;
+    transform: rotate(12deg);
+  }
+
+  .coming-soon {
+    display: none;
+  }
+  .coming-soon-mini {
+    display: block;
+  }
+
+  .project:hover {
+    .product-image {
+      height: 150px;
+      top: -40px;
+      right: -140px;
+      transform: rotate(12deg);
+    }
+    .big-product-image {
+      height: 170px !important;
+    top: -40px;
+    right: -100px;
+    transform: rotate(12deg);
+    }
   }
 
   .experience-container {
@@ -913,10 +1043,6 @@ li {
   .card {
     padding: 32px 24px;
   }
-  .about-container {
-    height: 90vh;
-  }
-  
   .about-card {
     width: 350px;
     top: 25%;
@@ -986,11 +1112,49 @@ li {
     right: 0;
   }
 
+  .hero-section {
+    gap: 16px;
+  }
+  .hero-images {
+    width: 85%
+  }
+  .hero-header {
+    width: 70%;
+  }
+
+  .spinny {
+    width: 60px;
+    height: 60px;
+    top: -25px;
+    left: -25px;
+  }
+
   .product-image {
     height: 130px;
     top: -40px;
-    right: -100px;
+    right: -80px;
     transform: rotate(12deg);
+  }
+  .big-product-image {
+    height: 150px !important;
+    top: -50px;
+    right: -60px;
+    transform: rotate(12deg);
+  }
+
+  .project:hover {
+    .product-image {
+      height: 130px;
+      top: -40px;
+      right: -80px;
+      transform: rotate(12deg);
+    }
+    .big-product-image {
+      height: 150px !important;
+      top: -50px;
+      right: -60px;
+      transform: rotate(12deg);
+    }
   }
 
   .skills-row {
@@ -1007,22 +1171,34 @@ li {
     justify-content: center;
   }
 
+  .about-container {
+    height: 900px;
+  }
+
   .about-card {
-    width: 300px;
+    width: 280px;
     top: 25%;
-    left: 6%;
+    left: 3%;
     transform: translateY(0);
-    z-index: 8;
+    z-index: 7;
   }
 
   .school-card {
     width: 240px;
-    top: 4%;
+    top: 10%;
     left: auto;
-    right: 8%;
-    z-index: 7;
+    right: 4%;
+    z-index: 8;
   }
 
+  .socials-card {
+    left: 2%;
+    z-index: 8;
+  }
+  .picture-card {
+    z-index: 6;
+    bottom: 10%;
+  }
   .footer-container {
     display: flex;
     flex-direction: column;
