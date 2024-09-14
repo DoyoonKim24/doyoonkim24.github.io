@@ -57,7 +57,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="hero-section" id="home">
-        <h1>Hello, I'm Doyoon!</h1>
+        <h1 className={`hero-header ${inView1 ? 'fade-in' : 'fade-out'}`} ref={ref1}> Hello, I'm Doyoon! </h1>
         <div
           className={`hero-images ${inView2 ? 'fade-in' : 'fade-out'}`}
           style={{ transition: '0.5s', transitionDelay: '0.1s' }}
