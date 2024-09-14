@@ -8,7 +8,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "New Kansas", "sans-serif";
+  font-family: "new-kansas", "sans-serif";
   color: #551F00;
   background-color: #F8ECDA;
 }
@@ -30,26 +30,26 @@ h3 {
   margin: 0;
   font-size: 2.441rem;
   font-weight: 600;
-  font-family: "New Kansas", "sans-serif";
+  font-family: "new-kansas", "sans-serif";
 }
 
 h4 {
   margin: 0;
-  font-family: "Basic Sans", "MS Sans Serif";
+  font-family: "basic-sans", "sans-serif";
   font-size: 1.953rem;
   font-weight: 600;
 }
 
 h5 {
   margin: 0;
-  font-family: "Basic Sans", "MS Sans Serif";
+  font-family: "basic-sans", "sans-serif";
   font-size: 1.563rem;
   font-weight: 600;
 }
 
 h6 {
   margin: 0;
-  font-family: "Basic Sans", "MS Sans Serif";
+  font-family: "basic-sans", "sans-serif";
   font-size: 1.25rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -57,21 +57,21 @@ h6 {
 
 p {
   margin: 0;
-  font-family: "Basic Sans", "MS Sans Serif";
+  font-family: "basic-sans", "sans-serif";
   font-size: 1.25rem;
   font-weight: 400;
 }
 
 .p-small {
   margin: 0;
-  font-family: "Basic Sans", "MS Sans Serif";
+  font-family: "basic-sans", "sans-serif";
   font-size: 1rem;
   font-weight: 400;
 }
 
 a {
   margin: 0;
-  font-family: "Basic Sans", "MS Sans Serif";
+  font-family: "basic-sans", "sans-serif";
   font-size: 1.25rem;
   font-weight: 600;
   text-decoration: none;
@@ -491,7 +491,7 @@ ol {
 }
 
 li {
-  font-family: "Basic Sans", "MS Sans Serif";
+  font-family: "basic-sans", "sans-serif";
   font-size: 1.15rem;
   font-weight: 400;
 }
@@ -588,7 +588,7 @@ li {
 }
 
 .about-card-title {
-  font-family: "New Kansas", "sans-serif";
+  font-family: "new-kansas", "sans-serif";
 }
 
 .about-line {
@@ -619,7 +619,7 @@ li {
 }
 
 .footer-font {
-  font-family: "New Kansas", "sans-serif";
+  font-family: "new-kansas", "sans-serif";
   font-weight: 500;
 }
 
