@@ -14,10 +14,11 @@ body {
 }
 
 h1 {
+  font-family: "new-kansas-swash", "sans-serif";
   margin: 0;
-  font-size: 6rem;
-  font-weight: 700;
-  line-height: 6rem;
+  font-size: 5.3rem;
+  font-weight: 600;
+  line-height: 5.3rem;
 }
 
 h2 {
@@ -643,7 +644,7 @@ li {
 @media only screen and (max-width: 1200px) {
   h1 {
     font-size: 4.77rem;
-    line-height: 5rem;
+    line-height: 4.77rem;
   }
   h2 {
     font-size: 3.814rem;
@@ -758,6 +759,10 @@ li {
   }
 }
 @media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+  }
   h2 {
     font-size: 3.05rem;
   }
@@ -910,8 +915,8 @@ li {
 }
 @media only screen and (max-width: 640px) {
   h1 {
-    font-size: 3.05rem;
-    line-height: 3.5rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
   h2 {
     font-size: 2.44rem;
@@ -1018,7 +1023,12 @@ li {
   }
 }
 @media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
   h2 {
+    font-size: 2.2rem;
     text-align: center;
     padding: 0 24px;
   }
