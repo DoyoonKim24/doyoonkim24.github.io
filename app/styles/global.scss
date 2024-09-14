@@ -145,10 +145,7 @@ a {
 }
 
 .hero-header {
-  width: 800px;
   transition: 0.5s;
-  object-fit: contain;
-  height: auto;
 }
 .hero-images {
   display: flex;
@@ -665,9 +662,6 @@ li {
   p {
     font-size: 1rem;
   }
-  .hero-header {
-    width: 650px;
-  }
   .spinny {
     width: 120px;
     height: 120px;
@@ -701,9 +695,6 @@ li {
     height: 26px;
   }
 
-  .hero-header {
-    width: 500px;
-  }
   .spinny {
     width: 100px;
     height: 100px;
@@ -826,9 +817,6 @@ li {
     visibility: visible;
   }
 
-  .hero-header {
-    width: 425px;
-  }
 
   .spinny {
     width: 80px;
@@ -978,9 +966,6 @@ li {
     font-size: 2.44rem;
   }
 
-  .hero-header {
-    width: 400px;
-  }
 
   .spinny {
     width: 70px;
@@ -1126,9 +1111,6 @@ li {
   }
   .hero-images {
     width: 85%
-  }
-  .hero-header {
-    width: 70%;
   }
 
   .spinny {
